@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "wb_a1_0001",
+    "word": "apple",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A round fruit that is usually red, green, or yellow.",
+    "example": "I eat an apple with my lunch.",
+    "categories": [
+      "Food"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0002",
+    "word": "chair",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A seat for one person, usually with a back.",
+    "example": "Please put the chair near the window.",
+    "categories": [
+      "Home"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0003",
+    "word": "water",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A clear liquid that people drink and use to wash.",
+    "example": "Can I have a glass of water?",
+    "categories": [
+      "Food"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0004",
+    "word": "family",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A group of people related to one another.",
+    "example": "My family eats dinner together.",
+    "categories": [
+      "People"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0005",
+    "word": "happy",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A1",
+    "definition": "Feeling good or pleased about something.",
+    "example": "She feels happy today.",
+    "categories": [
+      "Feelings"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0006",
+    "word": "small",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A1",
+    "definition": "Not large in size.",
+    "example": "We live in a small apartment.",
+    "categories": [
+      "Descriptions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0007",
+    "word": "open",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A1",
+    "definition": "To move something so people can go in or see inside.",
+    "example": "Please open the door.",
+    "categories": [
+      "Daily Actions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0008",
+    "word": "listen",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A1",
+    "definition": "To pay attention to a sound or someone speaking.",
+    "example": "Listen to the teacher, please.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0009",
+    "word": "morning",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "The early part of the day, before noon.",
+    "example": "I walk to school every morning.",
+    "categories": [
+      "Time"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0010",
+    "word": "friend",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A person you like and know well.",
+    "example": "My friend lives next door.",
+    "categories": [
+      "People"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0011",
+    "word": "market",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A place where people buy and sell things.",
+    "example": "We buy fruit at the market.",
+    "categories": [
+      "Shopping"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0012",
+    "word": "write",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A1",
+    "definition": "To make words using a pen, pencil, or keyboard.",
+    "example": "Write your name at the top.",
+    "categories": [
+      "Learning"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0013",
+    "word": "cold",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A1",
+    "definition": "Having a low temperature.",
+    "example": "The water is cold.",
+    "categories": [
+      "Weather"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0014",
+    "word": "street",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "A road in a town or city.",
+    "example": "The bakery is across the street.",
+    "categories": [
+      "Places"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0015",
+    "word": "sleep",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A1",
+    "definition": "To rest with your eyes closed for several hours.",
+    "example": "I usually sleep eight hours.",
+    "categories": [
+      "Daily Actions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0016",
+    "word": "question",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A1",
+    "definition": "Something you ask to get information.",
+    "example": "I have a question about the homework.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a1_0017",
+    "word": "today",
+    "partOfSpeech": "adverb",
+    "cefrLevel": "A1",
+    "definition": "On this day.",
+    "example": "We have a test today.",
+    "categories": [
+      "Time"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0001",
+    "word": "borrow",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A2",
+    "definition": "To take something for a time and give it back later.",
+    "example": "Can I borrow your umbrella?",
+    "categories": [
+      "Daily Actions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0002",
+    "word": "appointment",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "An agreed time to meet someone, often for a service.",
+    "example": "I have a dentist appointment on Friday.",
+    "categories": [
+      "Health"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0003",
+    "word": "neighborhood",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "The area of a town where people live near one another.",
+    "example": "Our neighborhood has a small park.",
+    "categories": [
+      "Places"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0004",
+    "word": "invite",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A2",
+    "definition": "To ask someone to come to an event or place.",
+    "example": "We invited our neighbors to dinner.",
+    "categories": [
+      "Relationships"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0005",
+    "word": "comfortable",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A2",
+    "definition": "Making you feel relaxed and at ease.",
+    "example": "These shoes are comfortable for walking.",
+    "categories": [
+      "Descriptions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0006",
+    "word": "repair",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A2",
+    "definition": "To make something work again after it breaks.",
+    "example": "They will repair my bicycle tomorrow.",
+    "categories": [
+      "Daily Actions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0007",
+    "word": "receipt",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "A paper or digital record showing that you paid.",
+    "example": "Keep the receipt in case you return it.",
+    "categories": [
+      "Shopping"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0008",
+    "word": "journey",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "Travel from one place to another.",
+    "example": "The train journey takes two hours.",
+    "categories": [
+      "Travel"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0009",
+    "word": "prefer",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A2",
+    "definition": "To like one option more than another.",
+    "example": "I prefer tea without sugar.",
+    "categories": [
+      "Preferences"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0010",
+    "word": "celebrate",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A2",
+    "definition": "To do something special for a happy event.",
+    "example": "We celebrate her birthday in June.",
+    "categories": [
+      "Social Life"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0011",
+    "word": "weather",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "The conditions outside, such as rain, wind, or sunshine.",
+    "example": "The weather looks nice this weekend.",
+    "categories": [
+      "Weather"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0012",
+    "word": "luggage",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "Bags and cases used when traveling.",
+    "example": "My luggage is still at the hotel.",
+    "categories": [
+      "Travel"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0013",
+    "word": "careful",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A2",
+    "definition": "Giving attention to avoid mistakes or danger.",
+    "example": "Be careful on the wet stairs.",
+    "categories": [
+      "Safety"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0014",
+    "word": "delicious",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A2",
+    "definition": "Having a very pleasant taste.",
+    "example": "This soup is delicious.",
+    "categories": [
+      "Food"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0015",
+    "word": "schedule",
+    "partOfSpeech": "noun",
+    "cefrLevel": "A2",
+    "definition": "A plan showing when activities will happen.",
+    "example": "My work schedule changes each week.",
+    "categories": [
+      "Time"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0016",
+    "word": "improve",
+    "partOfSpeech": "verb",
+    "cefrLevel": "A2",
+    "definition": "To become better or make something better.",
+    "example": "I want to improve my English.",
+    "categories": [
+      "Learning"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_a2_0017",
+    "word": "crowded",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "A2",
+    "definition": "Containing too many people or things in one space.",
+    "example": "The bus was crowded after work.",
+    "categories": [
+      "Places"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0001",
+    "word": "achieve",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To succeed in doing something after effort.",
+    "example": "She worked hard to achieve her goal.",
+    "categories": [
+      "Personal Growth"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0002",
+    "word": "opportunity",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "A situation that gives you a chance to do something.",
+    "example": "This internship is a good opportunity to learn.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0003",
+    "word": "confidence",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "The feeling that you can do something successfully.",
+    "example": "Practice helped him build confidence.",
+    "categories": [
+      "Feelings"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0004",
+    "word": "reliable",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B1",
+    "definition": "Able to be trusted to do what is expected.",
+    "example": "We need a reliable internet connection.",
+    "categories": [
+      "Descriptions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0005",
+    "word": "manage",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To deal with a task or situation successfully.",
+    "example": "I manage my time with a weekly planner.",
+    "categories": [
+      "Daily Life"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0006",
+    "word": "suggest",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To offer an idea for someone to consider.",
+    "example": "Can you suggest a good book?",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0007",
+    "word": "challenge",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "Something difficult that tests your ability.",
+    "example": "Learning to drive was a challenge for me.",
+    "categories": [
+      "Personal Growth"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0008",
+    "word": "compare",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To examine things to see how they are similar or different.",
+    "example": "Compare the two prices before you buy.",
+    "categories": [
+      "Learning"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0009",
+    "word": "support",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To help someone or something succeed or continue.",
+    "example": "Her friends support her new business.",
+    "categories": [
+      "Relationships"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0010",
+    "word": "environment",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "The natural world or the conditions around someone.",
+    "example": "We should protect the environment.",
+    "categories": [
+      "Nature"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0011",
+    "word": "decision",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "A choice made after thinking about options.",
+    "example": "Moving abroad was a big decision.",
+    "categories": [
+      "Daily Life"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0012",
+    "word": "responsible",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B1",
+    "definition": "Expected to take care of a duty or task.",
+    "example": "He is responsible for ordering supplies.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0013",
+    "word": "experience",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "Knowledge or skill gained by doing something.",
+    "example": "She has experience working with children.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0014",
+    "word": "recover",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To become well again after illness or difficulty.",
+    "example": "He needed time to recover from the flu.",
+    "categories": [
+      "Health"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0015",
+    "word": "attitude",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "The way someone thinks or feels about something.",
+    "example": "A positive attitude can help during change.",
+    "categories": [
+      "Feelings"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0016",
+    "word": "reduce",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B1",
+    "definition": "To make something smaller in amount or size.",
+    "example": "We are trying to reduce food waste.",
+    "categories": [
+      "Environment"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b1_0017",
+    "word": "benefit",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B1",
+    "definition": "A helpful or positive result.",
+    "example": "Regular reading has many benefits.",
+    "categories": [
+      "Learning"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0001",
+    "word": "flourish",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B2",
+    "definition": "To grow well or become increasingly successful.",
+    "example": "Her small business began to flourish.",
+    "categories": [
+      "Personal Growth"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0002",
+    "word": "perspective",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B2",
+    "definition": "A particular way of understanding a situation.",
+    "example": "Travel gave her a new perspective on life.",
+    "categories": [
+      "Ideas"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0003",
+    "word": "overcome",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B2",
+    "definition": "To succeed in dealing with a difficult problem.",
+    "example": "He overcame his fear of public speaking.",
+    "categories": [
+      "Personal Growth"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0004",
+    "word": "significant",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B2",
+    "definition": "Important or large enough to be noticed.",
+    "example": "The new policy made a significant difference.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0005",
+    "word": "maintain",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B2",
+    "definition": "To keep something in good condition or at the same level.",
+    "example": "It takes effort to maintain healthy habits.",
+    "categories": [
+      "Daily Life"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0006",
+    "word": "inevitable",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B2",
+    "definition": "Certain to happen and impossible to avoid.",
+    "example": "Some changes are inevitable as a city grows.",
+    "categories": [
+      "Ideas"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0007",
+    "word": "emphasize",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B2",
+    "definition": "To give special importance to an idea or fact.",
+    "example": "The report emphasizes the need for better training.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0008",
+    "word": "resilient",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B2",
+    "definition": "Able to recover or adapt after difficulties.",
+    "example": "The team stayed resilient during the crisis.",
+    "categories": [
+      "Personal Growth"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0009",
+    "word": "assumption",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B2",
+    "definition": "Something accepted as true without enough proof.",
+    "example": "The plan was based on a false assumption.",
+    "categories": [
+      "Critical Thinking"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0010",
+    "word": "contribute",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B2",
+    "definition": "To help produce a result or achieve a goal.",
+    "example": "Everyone can contribute to the project.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0011",
+    "word": "compromise",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B2",
+    "definition": "An agreement in which each side gives up something.",
+    "example": "They reached a compromise after a long discussion.",
+    "categories": [
+      "Relationships"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0012",
+    "word": "complex",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B2",
+    "definition": "Made of many connected parts and not easy to understand.",
+    "example": "The problem is more complex than it first appears.",
+    "categories": [
+      "Ideas"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0013",
+    "word": "evaluate",
+    "partOfSpeech": "verb",
+    "cefrLevel": "B2",
+    "definition": "To judge the quality or value of something carefully.",
+    "example": "We need to evaluate the results of the survey.",
+    "categories": [
+      "Critical Thinking"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0014",
+    "word": "priority",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B2",
+    "definition": "Something considered more important than other things.",
+    "example": "Finding stable housing is her first priority.",
+    "categories": [
+      "Daily Life"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0015",
+    "word": "reluctant",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B2",
+    "definition": "Not willing or eager to do something.",
+    "example": "He was reluctant to share his opinion.",
+    "categories": [
+      "Feelings"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0016",
+    "word": "sustainable",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "B2",
+    "definition": "Able to continue without using up resources or causing lasting harm.",
+    "example": "The company is exploring sustainable packaging.",
+    "categories": [
+      "Environment"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_b2_0017",
+    "word": "insight",
+    "partOfSpeech": "noun",
+    "cefrLevel": "B2",
+    "definition": "A clear and useful understanding of a situation.",
+    "example": "Her research offered insight into customer habits.",
+    "categories": [
+      "Ideas"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0001",
+    "word": "ambiguous",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Open to more than one reasonable interpretation.",
+    "example": "The contract contains an ambiguous sentence.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0002",
+    "word": "meticulous",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Extremely careful about small details.",
+    "example": "She kept meticulous records of every experiment.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0003",
+    "word": "subtle",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Not obvious and therefore difficult to notice.",
+    "example": "There was a subtle change in his tone.",
+    "categories": [
+      "Descriptions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0004",
+    "word": "undermine",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C1",
+    "definition": "To gradually weaken someone's confidence or something's effectiveness.",
+    "example": "Repeated delays undermined trust in the project.",
+    "categories": [
+      "Relationships"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0005",
+    "word": "compelling",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Strong enough to attract attention or persuade someone.",
+    "example": "The documentary presents a compelling argument.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0006",
+    "word": "scrutinize",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C1",
+    "definition": "To examine something very closely and critically.",
+    "example": "The committee will scrutinize the budget.",
+    "categories": [
+      "Critical Thinking"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0007",
+    "word": "inherent",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Existing as a natural or basic part of something.",
+    "example": "Every approach has inherent limitations.",
+    "categories": [
+      "Ideas"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0008",
+    "word": "discrepancy",
+    "partOfSpeech": "noun",
+    "cefrLevel": "C1",
+    "definition": "A difference between things that should agree.",
+    "example": "We found a discrepancy between the two reports.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0009",
+    "word": "alleviate",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C1",
+    "definition": "To make pain, difficulty, or a problem less severe.",
+    "example": "The new service aims to alleviate traffic congestion.",
+    "categories": [
+      "Society"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0010",
+    "word": "contemplate",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C1",
+    "definition": "To think carefully about a possibility or decision.",
+    "example": "She contemplated changing careers.",
+    "categories": [
+      "Reflection"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0011",
+    "word": "articulate",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C1",
+    "definition": "To express thoughts clearly and effectively.",
+    "example": "He struggled to articulate his concerns.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0012",
+    "word": "nuance",
+    "partOfSpeech": "noun",
+    "cefrLevel": "C1",
+    "definition": "A small difference in meaning, feeling, or expression.",
+    "example": "The translation misses a nuance in the original text.",
+    "categories": [
+      "Language"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0013",
+    "word": "coherent",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Clear, logical, and well connected.",
+    "example": "Her presentation gave a coherent explanation of the findings.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0014",
+    "word": "plausible",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Seeming reasonable or likely to be true.",
+    "example": "That is a plausible explanation, but we need evidence.",
+    "categories": [
+      "Critical Thinking"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0015",
+    "word": "detrimental",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C1",
+    "definition": "Causing harm or damage.",
+    "example": "Long periods of isolation can be detrimental to well-being.",
+    "categories": [
+      "Health"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c1_0016",
+    "word": "reinforce",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C1",
+    "definition": "To make an idea, feeling, or structure stronger.",
+    "example": "The examples reinforce the main argument.",
+    "categories": [
+      "Learning"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0001",
+    "word": "equivocal",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Deliberately unclear or capable of expressing different meanings.",
+    "example": "The minister gave an equivocal answer to the question.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0002",
+    "word": "intransigent",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Unwilling to change a strongly held position.",
+    "example": "The negotiators remained intransigent despite new proposals.",
+    "categories": [
+      "Society"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0003",
+    "word": "perfunctory",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Done quickly with little care or genuine interest.",
+    "example": "He offered a perfunctory apology and left.",
+    "categories": [
+      "Descriptions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0004",
+    "word": "ubiquitous",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Present or found almost everywhere.",
+    "example": "Smartphones have become ubiquitous in many cities.",
+    "categories": [
+      "Technology"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0005",
+    "word": "quintessential",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Representing the most typical or perfect example of something.",
+    "example": "The café is a quintessential neighborhood meeting place.",
+    "categories": [
+      "Culture"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0006",
+    "word": "obfuscate",
+    "partOfSpeech": "verb",
+    "cefrLevel": "C2",
+    "definition": "To make something harder to understand, often deliberately.",
+    "example": "The dense wording seemed designed to obfuscate the issue.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0007",
+    "word": "recalcitrant",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Stubbornly resisting instructions or control.",
+    "example": "The recalcitrant committee refused to reconsider.",
+    "categories": [
+      "Society"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0008",
+    "word": "ephemeral",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Lasting for only a very short time.",
+    "example": "The installation explored the ephemeral nature of beauty.",
+    "categories": [
+      "Literature"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0009",
+    "word": "sagacious",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Showing deep practical wisdom and sound judgment.",
+    "example": "Her sagacious advice prevented a costly mistake.",
+    "categories": [
+      "Descriptions"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0010",
+    "word": "conundrum",
+    "partOfSpeech": "noun",
+    "cefrLevel": "C2",
+    "definition": "A difficult problem that is confusing or hard to solve.",
+    "example": "The discovery created an ethical conundrum for researchers.",
+    "categories": [
+      "Critical Thinking"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0011",
+    "word": "proclivity",
+    "partOfSpeech": "noun",
+    "cefrLevel": "C2",
+    "definition": "A natural tendency to behave in a particular way.",
+    "example": "He has a proclivity for taking unnecessary risks.",
+    "categories": [
+      "Psychology"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0012",
+    "word": "inexorable",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Continuing in a way that cannot be stopped or changed.",
+    "example": "The inexorable passage of time shapes the novel.",
+    "categories": [
+      "Literature"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0013",
+    "word": "fastidious",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Giving unusually careful attention to detail or standards.",
+    "example": "The editor was fastidious about punctuation.",
+    "categories": [
+      "Work"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0014",
+    "word": "magnanimous",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Generous and forgiving, especially toward a rival.",
+    "example": "She was magnanimous in victory and praised her opponent.",
+    "categories": [
+      "Relationships"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0015",
+    "word": "laconic",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Using very few words to express something.",
+    "example": "His laconic reply ended the discussion.",
+    "categories": [
+      "Communication"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  },
+  {
+    "id": "wb_c2_0016",
+    "word": "perspicacious",
+    "partOfSpeech": "adjective",
+    "cefrLevel": "C2",
+    "definition": "Quick to notice and understand things accurately.",
+    "example": "The perspicacious analyst spotted a hidden pattern.",
+    "categories": [
+      "Critical Thinking"
+    ],
+    "status": "draft",
+    "reviewStatus": "needs_review",
+    "cefrAssignment": "provisional",
+    "source": "WordBloom original editorial draft",
+    "reviewNotes": ""
+  }
+]
