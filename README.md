@@ -25,7 +25,7 @@ The app is designed around a growing vocabulary collection, personalized progres
 - 🌱 **Learning Garden:** A dedicated space for vocabulary progress.
 - 🍃 **Leaf Points:** A reward system connected to the learning experience.
 - 🎨 **Custom UI:** A soft, pastel-inspired interface with reusable components.
-- 📚 **Offline Vocabulary:** An initial curated collection of 100 English words.
+- 📚 **Offline Vocabulary:** An initial curated collection of 1000 English words.
 
 ## 🛠️ Built With
 
