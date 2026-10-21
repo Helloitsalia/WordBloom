@@ -1,86 +1,141 @@
-
 import 'package:flutter/material.dart';
+
 import '../../../core/theme/app_colors.dart';
+import '../../garden/learning_progress_controller.dart';
 
-class GardenProgressCard extends StatelessWidget {
-  final int learnedWords;
-  final int goalWords;
-  final int streakDays;
+class GardenProgressCard extends StatefulWidget {
+  const GardenProgressCard({super.key});
 
-  const GardenProgressCard({
-    super.key,
-    this.learnedWords = 12,
-    this.goalWords = 20,
-    this.streakDays = 3,
-  });
+  @override
+  State<GardenProgressCard> createState() => _GardenProgressCardState();
+}
+
+class _GardenProgressCardState extends State<GardenProgressCard> {
+  final LearningProgressController _learning =
+      LearningProgressController.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    _learning.load();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final progress = goalWords > 0
-        ? (learnedWords / goalWords).clamp(0.0, 1.0)
-        : 0.0;
+    return ListenableBuilder(
+      listenable: _learning,
+      builder: (context, child) {
+        final learnedWords = _learning.correctlyPracticedCount;
+        const goalWords = 20;
 
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.mintGreen.withValues(alpha: 0.5),
-        borderRadius: BorderRadius.circular(26),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '🌱 MY LITTLE GARDEN',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF427455),
-              letterSpacing: 1,
-            ),
+        final progress = (learnedWords / goalWords).clamp(0.0, 1.0);
+
+        final IconData plantIcon;
+
+        if (learnedWords >= 20) {
+          plantIcon = Icons.local_florist;
+        } else if (learnedWords >= 10) {
+          plantIcon = Icons.park;
+        } else if (learnedWords >= 5) {
+          plantIcon = Icons.spa;
+        } else {
+          plantIcon = Icons.eco;
+        }
+
+        return Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: AppColors.sageCard,
+            borderRadius: BorderRadius.circular(26),
+            border: Border.all(color: AppColors.sageBorder),
           ),
-          const SizedBox(height: 8),
-          const Center(
-            child: Text(
-              '🌸',
-              style: TextStyle(fontSize: 65),
-            ),
-          ),
-          const SizedBox(height: 6),
-          Center(
-            child: Text(
-              '$learnedWords / $goalWords words',
-              style: const TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF365E45),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'MY LITTLE GARDEN',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.sagePrimary,
+                  letterSpacing: 1,
+                ),
               ),
-            ),
-          ),
-          const SizedBox(height: 10),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: LinearProgressIndicator(
-              value: progress,
-              minHeight: 10,
-              backgroundColor: const Color(0xFFBED9C5),
-              valueColor: const AlwaysStoppedAnimation<Color>(
-                Color(0xFF6CB386),
+
+              const SizedBox(height: 14),
+
+              Row(
+                children: [
+                  SizedBox(
+                    width: 76,
+                    child: Icon(
+                      plantIcon,
+                      size: 55,
+                      color: AppColors.sagePrimary,
+                    ),
+                  ),
+
+                  const SizedBox(width: 12),
+
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '$learnedWords / $goalWords words',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.sageDark,
+                          ),
+                        ),
+
+                        const SizedBox(height: 4),
+
+                        const Text(
+                          'Words practiced correctly',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: AppColors.sageSecondary,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Center(
-            child: Text(
-              '$streakDays-day streak 🔥',
-              style: const TextStyle(
-                fontSize: 14,
-                color: Color(0xFF427455),
+
+              const SizedBox(height: 14),
+
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: LinearProgressIndicator(
+                  value: progress,
+                  minHeight: 8,
+                  backgroundColor: AppColors.sageBorder,
+                  color: AppColors.sagePrimary,
+                ),
               ),
-            ),
+
+              const SizedBox(height: 10),
+
+              Center(
+                child: Text(
+                  learnedWords >= goalWords
+                      ? 'Your garden is blooming!'
+                      : '${goalWords - learnedWords} more words to your next bloom',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: AppColors.sageSecondary,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

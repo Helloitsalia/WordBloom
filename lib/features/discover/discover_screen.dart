@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
-import '../saved/saved_words_controller.dart';
 import '../../data/models/vocabulary_word.dart';
+import '../../shared/widgets/expandable_word_card.dart';
 import '../../data/services/vocabulary_repository.dart';
 
 class DiscoverScreen extends StatefulWidget {
@@ -19,9 +18,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   String _searchQuery = '';
   String _selectedLevel = 'All';
 
-  final List<String> _levels = [
-    'All', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2',
-  ];
+  final List<String> _levels = ['All', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
   @override
   void initState() {
@@ -31,8 +28,8 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
   List<VocabularyWord> _filterWords(List<VocabularyWord> words) {
     final filtered = words.where((word) {
-      final matchesLevel = _selectedLevel == 'All' ||
-          word.cefrLevel == _selectedLevel;
+      final matchesLevel =
+          _selectedLevel == 'All' || word.cefrLevel == _selectedLevel;
 
       final query = _searchQuery.toLowerCase().trim();
 
@@ -53,10 +50,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Discover 🌷'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Discover 🌷'), centerTitle: true),
       body: FutureBuilder<List<VocabularyWord>>(
         future: _wordsFuture,
         builder: (context, snapshot) {
@@ -73,9 +67,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           }
 
           if (!snapshot.hasData) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
 
           final words = _filterWords(snapshot.data!);
@@ -106,8 +98,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   scrollDirection: Axis.horizontal,
                   itemCount: _levels.length,
-                  separatorBuilder: (_, _) =>
-                      const SizedBox(width: 8),
+                  separatorBuilder: (_, _) => const SizedBox(width: 8),
                   itemBuilder: (context, index) {
                     final level = _levels[index];
 
@@ -135,74 +126,14 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
               Expanded(
                 child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   itemCount: words.length,
                   itemBuilder: (context, index) {
                     final word = words[index];
 
-                    return Card(
-                      margin: const EdgeInsets.only(bottom: 12),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            
-Row(
-  children: [
-    Expanded(
-      child: Text(
-        word.word,
-        style: Theme.of(context).textTheme.titleLarge,
-      ),
-    ),
-    Chip(
-      label: Text(word.cefrLevel),
-    ),
-    const SizedBox(width: 8),
-    ListenableBuilder(
-      listenable: SavedWordsController.instance,
-      builder: (context, _) {
-        final isSaved =
-            SavedWordsController.instance.isSaved(word.id);
-
-        return IconButton(
-          tooltip: isSaved ? 'Remove saved word' : 'Save word',
-          icon: Icon(
-            isSaved ? Icons.bookmark : Icons.bookmark_border,
-            color: isSaved
-                ? const Color(0xFFA33E73)
-                : Colors.grey,
-          ),
-          onPressed: () {
-            SavedWordsController.instance.toggleSaved(word.id);
-          },
-        );
-      },
-    ),
-  ],
-),
-
-                            const SizedBox(height: 4),
-                            Text(
-                              word.partOfSpeech,
-                              style: Theme.of(context)
-                                  .textTheme.bodySmall,
-                            ),
-                            const SizedBox(height: 8),
-                            Text(word.definition),
-                            const SizedBox(height: 8),
-                            Text(
-                              word.example,
-                              style: const TextStyle(
-                                fontStyle: FontStyle.italic,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    return ExpandableWordCard(
+                      key: ValueKey(word.id),
+                      word: word,
                     );
                   },
                 ),
