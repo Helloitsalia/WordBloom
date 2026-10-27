@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -49,6 +51,8 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
   bool _earnedPoint = false;
   bool _saveFailed = false;
   bool _sessionComplete = false;
+  bool _isPlanting = false;
+  bool _plantSaveFailed = false;
 
   @override
   void initState() {
@@ -203,6 +207,24 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
       if (recorded) {
         _netLeaves += _leaves.balance - balanceBefore;
       }
+    });
+  }
+
+  Future<void> _plantCurrentWord() async {
+    if (!_hasChecked || _isPlanting) return;
+
+    setState(() {
+      _isPlanting = true;
+      _plantSaveFailed = false;
+    });
+
+    final saved = await _learning.plantWord(_currentWord.id);
+
+    if (!mounted) return;
+
+    setState(() {
+      _isPlanting = false;
+      _plantSaveFailed = !saved;
     });
   }
 
@@ -371,7 +393,40 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
 
         if (_hasChecked) ...[
           const SizedBox(height: 14),
+          const SizedBox(height: 14),
 
+          if (_learning.isPlanted(_currentWord.id))
+            const Row(
+              children: [
+                Icon(Icons.check_circle, color: AppColors.sagePrimary),
+                SizedBox(width: 8),
+                Text(
+                  'Planted in your Garden!',
+                  style: TextStyle(
+                    color: AppColors.sagePrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            )
+          else
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: _isPlanting ? null : _plantCurrentWord,
+                icon: const Icon(Icons.spa_outlined),
+                label: Text(_isPlanting ? 'Planting...' : 'Plant in Garden'),
+              ),
+            ),
+
+          if (_plantSaveFailed)
+            const Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: Text(
+                'Could not save this word. Please try again.',
+                style: TextStyle(color: Colors.red),
+              ),
+            ),
           Text(
             _wasCorrect
                 ? (_earnedPoint
@@ -451,7 +506,44 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
           'Rewarded ads coming soon',
           style: TextStyle(color: AppColors.sageSecondary, fontSize: 12),
         ),
-      ],
+          if (kDebugMode) ...[
+            const SizedBox(height: 20),
+            const Divider(),
+            const Text(
+              'DEVELOPER TOOLS',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: AppColors.sageSecondary,
+              ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: () async {
+                  final success = await _practice.debugResetDailyQuestions();
+
+                  if (!mounted) return;
+
+                  if (success) {
+                    setState(() {
+                      _startSession();
+                    });
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Could not reset daily questions.'),
+                      ),
+                    );
+                  }
+                },
+                icon: const Icon(Icons.refresh),
+                label: const Text('Reset daily questions (DEV)'),
+              ),
+            ),
+          ],
+        ],
     );
   }
 

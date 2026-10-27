@@ -91,6 +91,34 @@ class DailyPracticeController extends ChangeNotifier {
       return false;
     }
   }
+  // Developer testing only.
+// Resets today's used questions without changing bonus credits,
+// leaf points, or learning progress.
+Future<bool> debugResetDailyQuestions() async {
+  if (!kDebugMode) return false;
+
+  await load();
+
+  final prefs = await SharedPreferences.getInstance();
+  final previousUsed = _usedQuestions;
+
+  try {
+    final saved = await prefs.setInt(_usedKey, 0);
+
+    if (!saved) {
+      throw StateError('Could not reset daily questions.');
+    }
+
+    _usedQuestions = 0;
+    notifyListeners();
+
+    return true;
+  } catch (error) {
+    _usedQuestions = previousUsed;
+    debugPrint('Developer reset failed: $error');
+    return false;
+  }
+}
 
   // Reserved for future rewarded-ad integration.
   // Never call this method just because an ad was opened.

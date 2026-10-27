@@ -25,7 +25,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
     return ListenableBuilder(
       listenable: _learning,
       builder: (context, child) {
-        final learnedWords = _learning.correctlyPracticedCount;
+        final learnedWords = _learning.learnedWordsCount;
         const goalWords = 20;
 
         final progress = (learnedWords / goalWords).clamp(0.0, 1.0);
@@ -54,7 +54,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'MY LITTLE GARDEN',
+                'YOUR LEARNING JOURNEY',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -68,10 +68,10 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
               Row(
                 children: [
                   SizedBox(
-                    width: 76,
+                    width: 65,
                     child: Icon(
                       plantIcon,
-                      size: 55,
+                      size: 48,
                       color: AppColors.sagePrimary,
                     ),
                   ),
@@ -83,7 +83,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '$learnedWords / $goalWords words',
+                          '$learnedWords ${learnedWords == 1 ? 'word' : 'words'} learned!',
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -94,7 +94,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                         const SizedBox(height: 4),
 
                         const Text(
-                          'Words practiced correctly',
+                          'Every new word is a little victory. 🌻',
                           style: TextStyle(
                             fontSize: 12,
                             color: AppColors.sageSecondary,
@@ -106,7 +106,36 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                 ],
               ),
 
+              const SizedBox(height: 16),
+
+              const Divider(color: AppColors.sageBorder, height: 1),
+
               const SizedBox(height: 14),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'NEXT GARDEN MILESTONE',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0.8,
+                      color: AppColors.sagePrimary,
+                    ),
+                  ),
+                  Text(
+                    '$learnedWords / $goalWords',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.sageDark,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 12),
 
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
@@ -124,7 +153,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                 child: Text(
                   learnedWords >= goalWords
                       ? 'Your garden is blooming!'
-                      : '${goalWords - learnedWords} more words to your next bloom',
+                      : '${goalWords - learnedWords} more words until your next bloom',
                   style: const TextStyle(
                     fontSize: 12,
                     color: AppColors.sageSecondary,

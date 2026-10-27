@@ -1,12 +1,10 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SavedWordsController extends ChangeNotifier {
   SavedWordsController._();
 
-  static final SavedWordsController instance =
-      SavedWordsController._();
+  static final SavedWordsController instance = SavedWordsController._();
 
   static const String _storageKey = 'wordbloom_saved_word_ids';
 
@@ -56,10 +54,7 @@ class SavedWordsController extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
 
-      await prefs.setStringList(
-        _storageKey,
-        _savedIds.toList(),
-      );
+      await prefs.setStringList(_storageKey, _savedIds.toList());
     } catch (error) {
       if (wasSaved) {
         _savedIds.add(wordId);

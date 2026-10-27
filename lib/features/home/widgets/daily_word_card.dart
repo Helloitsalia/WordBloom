@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/theme/app_colors.dart';
 import '../../../data/models/vocabulary_word.dart';
 import '../../saved/saved_words_controller.dart';
@@ -139,7 +140,7 @@ class DailyWordCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              child: const Text('Learn this word →'),
+              child: const Text('Practice vocabulary →'),
             ),
           ),
         ],

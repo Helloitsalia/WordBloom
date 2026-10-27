@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+
 import '../../core/theme/app_colors.dart';
 
 class BloomNavigationBar extends StatelessWidget {
@@ -21,8 +21,7 @@ class BloomNavigationBar extends StatelessWidget {
       indicatorColor: AppColors.blossomPink,
       elevation: 0,
       height: 75,
-      labelBehavior:
-          NavigationDestinationLabelBehavior.alwaysShow,
+      labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       destinations: const [
         NavigationDestination(
           icon: Icon(Icons.home_outlined),

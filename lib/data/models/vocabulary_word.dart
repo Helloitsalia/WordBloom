@@ -1,4 +1,3 @@
-
 class VocabularyWord {
   final String id;
   final String word;
@@ -29,8 +28,7 @@ class VocabularyWord {
       definition: json['definition'] as String,
       example: json['example'] as String,
       categories: List<String>.from(json['categories'] ?? []),
-      reviewStatus:
-          json['reviewStatus'] as String? ?? 'needs_review',
+      reviewStatus: json['reviewStatus'] as String? ?? 'needs_review',
     );
   }
 }

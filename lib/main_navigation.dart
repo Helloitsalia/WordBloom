@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'features/home/home_screen.dart';
@@ -12,8 +11,7 @@ class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
 
   @override
-  State<MainNavigation> createState() =>
-      _MainNavigationState();
+  State<MainNavigation> createState() => _MainNavigationState();
 }
 
 class _MainNavigationState extends State<MainNavigation> {
@@ -35,10 +33,7 @@ class _MainNavigationState extends State<MainNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _screens,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: _screens),
       bottomNavigationBar: BloomNavigationBar(
         selectedIndex: _selectedIndex,
         onDestinationSelected: _onTabSelected,
