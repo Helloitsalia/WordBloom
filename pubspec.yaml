@@ -61,6 +61,16 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/vocabulary/wordbloom_cefr_100.json
+   - assets/images/branding/
+   - assets/images/buttons/
+   - assets/images/cefr/
+   - assets/images/controls/
+   - assets/images/decor/
+   - assets/images/garden/
+   - assets/images/growth/
+   - assets/images/icons/
+   - assets/images/learning/
+   - assets/images/nav/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

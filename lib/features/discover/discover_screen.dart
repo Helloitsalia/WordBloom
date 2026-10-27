@@ -4,6 +4,7 @@ import '../../data/models/vocabulary_word.dart';
 import '../../shared/widgets/expandable_word_card.dart';
 import '../../data/services/vocabulary_repository.dart';
 
+
 class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
 
