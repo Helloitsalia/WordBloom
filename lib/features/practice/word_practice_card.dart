@@ -53,6 +53,8 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
   bool _sessionComplete = false;
   bool _isPlanting = false;
   bool _plantSaveFailed = false;
+  bool _isAddingToRepeat = false;
+  bool _repeatSaveFailed = false;
 
   @override
   void initState() {
@@ -96,11 +98,36 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     if (available.isEmpty) return null;
 
     // Prioritize words not scored today.
-    final unscored = available
-        .where((word) => !_leaves.hasScoredToday(word.id))
+
+    final repeatUnscored = available
+        .where(
+          (word) =>
+              _learning.isInRepeat(word.id) && !_leaves.hasScoredToday(word.id),
+        )
         .toList();
 
-    final candidates = unscored.isNotEmpty ? unscored : available;
+    final otherUnscored = available
+        .where(
+          (word) =>
+              !_learning.isInRepeat(word.id) &&
+              !_leaves.hasScoredToday(word.id),
+        )
+        .toList();
+
+    final repeatScored = available
+        .where(
+          (word) =>
+              _learning.isInRepeat(word.id) && _leaves.hasScoredToday(word.id),
+        )
+        .toList();
+
+    final candidates = repeatUnscored.isNotEmpty
+        ? repeatUnscored
+        : otherUnscored.isNotEmpty
+        ? otherUnscored
+        : repeatScored.isNotEmpty
+        ? repeatScored
+        : available;
 
     return candidates[_random.nextInt(candidates.length)];
   }
@@ -132,6 +159,10 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     _wasCorrect = false;
     _earnedPoint = false;
     _saveFailed = false;
+    _isAddingToRepeat = false;
+    _repeatSaveFailed = false;
+    _isPlanting = false;
+    _plantSaveFailed = false;
     _generateOptions();
   }
 
@@ -187,6 +218,12 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     if (correct) {
       final saved = await _learning.recordCorrectWord(_currentWord.id);
       learningSaveFailed = !saved;
+    } else {
+      final saved = _learning.isPlanted(_currentWord.id)
+          ? await _learning.movePlantedWordToRepeat(_currentWord.id)
+          : await _learning.addToRepeat(_currentWord.id);
+
+      learningSaveFailed = !saved;
     }
 
     if (!mounted) return;
@@ -225,6 +262,30 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     setState(() {
       _isPlanting = false;
       _plantSaveFailed = !saved;
+    });
+  }
+
+  Future<void> _addCurrentWordToRepeat() async {
+    if (!_hasChecked ||
+        !_wasCorrect ||
+        _isAddingToRepeat ||
+        _isPlanting ||
+        _learning.isPlanted(_currentWord.id)) {
+      return;
+    }
+
+    setState(() {
+      _isAddingToRepeat = true;
+      _repeatSaveFailed = false;
+    });
+
+    final saved = await _learning.addToRepeat(_currentWord.id);
+
+    if (!mounted) return;
+
+    setState(() {
+      _isAddingToRepeat = false;
+      _repeatSaveFailed = !saved;
     });
   }
 
@@ -393,40 +454,8 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
 
         if (_hasChecked) ...[
           const SizedBox(height: 14),
-          const SizedBox(height: 14),
 
-          if (_learning.isPlanted(_currentWord.id))
-            const Row(
-              children: [
-                Icon(Icons.check_circle, color: AppColors.sagePrimary),
-                SizedBox(width: 8),
-                Text(
-                  'Planted in your Garden!',
-                  style: TextStyle(
-                    color: AppColors.sagePrimary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            )
-          else
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton.icon(
-                onPressed: _isPlanting ? null : _plantCurrentWord,
-                icon: const Icon(Icons.spa_outlined),
-                label: Text(_isPlanting ? 'Planting...' : 'Plant in Garden'),
-              ),
-            ),
-
-          if (_plantSaveFailed)
-            const Padding(
-              padding: EdgeInsets.only(top: 8),
-              child: Text(
-                'Could not save this word. Please try again.',
-                style: TextStyle(color: Colors.red),
-              ),
-            ),
+          // Show the answer result first.
           Text(
             _wasCorrect
                 ? (_earnedPoint
@@ -441,7 +470,103 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
             ),
           ),
 
-          if (!_wasCorrect) ...[
+          const SizedBox(height: 12),
+
+          if (_wasCorrect) ...[
+            // Correct answer: offer Garden or Repeat.
+            if (_learning.isPlanted(_currentWord.id))
+              const Row(
+                children: [
+                  Icon(Icons.check_circle, color: AppColors.sagePrimary),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Planted in your Garden!',
+                      style: TextStyle(
+                        color: AppColors.sagePrimary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            else
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: _isPlanting || _isAddingToRepeat
+                          ? null
+                          : _plantCurrentWord,
+                      icon: const Icon(Icons.spa_outlined, size: 18),
+                      label: Text(
+                        _isPlanting ? 'Planting...' : 'Add to Garden',
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed:
+                          _isPlanting ||
+                              _isAddingToRepeat ||
+                              _learning.isInRepeat(_currentWord.id)
+                          ? null
+                          : _addCurrentWordToRepeat,
+                      icon: Icon(
+                        _learning.isInRepeat(_currentWord.id)
+                            ? Icons.check_circle_outline
+                            : Icons.refresh,
+                        size: 18,
+                      ),
+                      label: Text(
+                        _isAddingToRepeat
+                            ? 'Saving...'
+                            : _learning.isInRepeat(_currentWord.id)
+                            ? 'Added to Repeat'
+                            : 'Add to Repeat',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+            if (_plantSaveFailed || _repeatSaveFailed)
+              const Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Text(
+                  'Could not save this word. Please try again.',
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+          ] else ...[
+            // Incorrect answer: Repeat is automatic.
+            Row(
+              children: [
+                Icon(
+                  _learning.isInRepeat(_currentWord.id)
+                      ? Icons.check_circle_outline
+                      : Icons.error_outline,
+                  color: _learning.isInRepeat(_currentWord.id)
+                      ? AppColors.sagePrimary
+                      : Colors.red,
+                  size: 20,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    _learning.isInRepeat(_currentWord.id)
+                        ? 'Added to Repeat — keep practicing!'
+                        : 'Could not add to Repeat',
+
+                    style: const TextStyle(
+                      color: AppColors.sageSecondary,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: 8),
             Text(
               'Correct answer: ${_currentWord.definition}',
@@ -457,7 +582,9 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
-              onPressed: _nextQuestion,
+              onPressed: _isPlanting || _isAddingToRepeat
+                  ? null
+                  : _nextQuestion,
               icon: const Icon(Icons.arrow_forward),
               label: Text(
                 _questionNumber >= _sessionLimit || !_practice.canPractice
@@ -506,44 +633,44 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
           'Rewarded ads coming soon',
           style: TextStyle(color: AppColors.sageSecondary, fontSize: 12),
         ),
-          if (kDebugMode) ...[
-            const SizedBox(height: 20),
-            const Divider(),
-            const Text(
-              'DEVELOPER TOOLS',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: AppColors.sageSecondary,
-              ),
+        if (kDebugMode) ...[
+          const SizedBox(height: 20),
+          const Divider(),
+          const Text(
+            'DEVELOPER TOOLS',
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: AppColors.sageSecondary,
             ),
-            const SizedBox(height: 10),
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton.icon(
-                onPressed: () async {
-                  final success = await _practice.debugResetDailyQuestions();
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            width: double.infinity,
+            child: OutlinedButton.icon(
+              onPressed: () async {
+                final success = await _practice.debugResetDailyQuestions();
 
-                  if (!mounted) return;
+                if (!mounted) return;
 
-                  if (success) {
-                    setState(() {
-                      _startSession();
-                    });
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Could not reset daily questions.'),
-                      ),
-                    );
-                  }
-                },
-                icon: const Icon(Icons.refresh),
-                label: const Text('Reset daily questions (DEV)'),
-              ),
+                if (success) {
+                  setState(() {
+                    _startSession();
+                  });
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Could not reset daily questions.'),
+                    ),
+                  );
+                }
+              },
+              icon: const Icon(Icons.refresh),
+              label: const Text('Reset daily questions (DEV)'),
             ),
-          ],
+          ),
         ],
+      ],
     );
   }
 

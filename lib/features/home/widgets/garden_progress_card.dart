@@ -26,19 +26,49 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
       listenable: _learning,
       builder: (context, child) {
         final learnedWords = _learning.learnedWordsCount;
-        const goalWords = 20;
 
-        final progress = (learnedWords / goalWords).clamp(0.0, 1.0);
+        const milestones = [20, 50, 100, 250, 500, 750, 1000];
 
+        final goalWords = milestones.firstWhere(
+          (milestone) => learnedWords < milestone,
+          orElse: () => 1000,
+        );
+
+        final previousGoal = milestones
+            .where((milestone) => milestone < goalWords)
+            .fold<int>(0, (_, milestone) => milestone);
+
+        final progress = learnedWords >= 1000
+            ? 1.0
+            : ((learnedWords - previousGoal) / (goalWords - previousGoal))
+                  .clamp(0.0, 1.0);
+
+        final String rankName;
         final IconData plantIcon;
 
-        if (learnedWords >= 20) {
-          plantIcon = Icons.local_florist;
-        } else if (learnedWords >= 10) {
+        if (learnedWords >= 1000) {
+          rankName = 'WordBloom Master';
+          plantIcon = Icons.workspace_premium;
+        } else if (learnedWords >= 750) {
+          rankName = 'Enchanted Garden';
+          plantIcon = Icons.auto_awesome;
+        } else if (learnedWords >= 500) {
+          rankName = 'Botanical Haven';
+          plantIcon = Icons.forest;
+        } else if (learnedWords >= 250) {
+          rankName = 'Flourishing Garden';
           plantIcon = Icons.park;
-        } else if (learnedWords >= 5) {
+        } else if (learnedWords >= 100) {
+          rankName = 'Blooming Garden';
+          plantIcon = Icons.local_florist;
+        } else if (learnedWords >= 50) {
+          rankName = 'Growing Garden';
+          plantIcon = Icons.yard;
+        } else if (learnedWords >= 20) {
+          rankName = 'Seedling';
           plantIcon = Icons.spa;
         } else {
+          rankName = 'New Gardener';
           plantIcon = Icons.eco;
         }
 
@@ -88,6 +118,17 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: AppColors.sageDark,
+                          ),
+                        ),
+
+                        const SizedBox(height: 4),
+
+                        Text(
+                          rankName,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.sagePrimary,
                           ),
                         ),
 
@@ -151,13 +192,9 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
 
               Center(
                 child: Text(
-                  learnedWords >= goalWords
-                      ? 'Your garden is blooming!'
-                      : '${goalWords - learnedWords} more words until your next bloom',
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.sageSecondary,
-                  ),
+                  learnedWords >= 1000
+                      ? 'Your garden has reached its highest rank! 🌻'
+                      : '${goalWords - learnedWords} more words until your next rank',
                   textAlign: TextAlign.center,
                 ),
               ),
