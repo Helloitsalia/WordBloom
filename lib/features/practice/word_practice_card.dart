@@ -53,8 +53,6 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
   bool _sessionComplete = false;
   bool _isPlanting = false;
   bool _plantSaveFailed = false;
-  bool _isAddingToRepeat = false;
-  bool _repeatSaveFailed = false;
 
   @override
   void initState() {
@@ -159,8 +157,6 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     _wasCorrect = false;
     _earnedPoint = false;
     _saveFailed = false;
-    _isAddingToRepeat = false;
-    _repeatSaveFailed = false;
     _isPlanting = false;
     _plantSaveFailed = false;
     _generateOptions();
@@ -216,8 +212,15 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     bool learningSaveFailed = false;
 
     if (correct) {
-      final saved = await _learning.recordCorrectWord(_currentWord.id);
-      learningSaveFailed = !saved;
+      final historySaved = await _learning.recordCorrectWord(_currentWord.id);
+
+      bool repeatSaved = true;
+
+      if (!_learning.isPlanted(_currentWord.id)) {
+        repeatSaved = await _learning.addToRepeat(_currentWord.id);
+      }
+
+      learningSaveFailed = !historySaved || !repeatSaved;
     } else {
       final saved = _learning.isPlanted(_currentWord.id)
           ? await _learning.movePlantedWordToRepeat(_currentWord.id)
@@ -262,30 +265,6 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
     setState(() {
       _isPlanting = false;
       _plantSaveFailed = !saved;
-    });
-  }
-
-  Future<void> _addCurrentWordToRepeat() async {
-    if (!_hasChecked ||
-        !_wasCorrect ||
-        _isAddingToRepeat ||
-        _isPlanting ||
-        _learning.isPlanted(_currentWord.id)) {
-      return;
-    }
-
-    setState(() {
-      _isAddingToRepeat = true;
-      _repeatSaveFailed = false;
-    });
-
-    final saved = await _learning.addToRepeat(_currentWord.id);
-
-    if (!mounted) return;
-
-    setState(() {
-      _isAddingToRepeat = false;
-      _repeatSaveFailed = !saved;
     });
   }
 
@@ -495,9 +474,7 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
                 children: [
                   Expanded(
                     child: ElevatedButton.icon(
-                      onPressed: _isPlanting || _isAddingToRepeat
-                          ? null
-                          : _plantCurrentWord,
+                      onPressed: _isPlanting ? null : _plantCurrentWord,
                       icon: const Icon(Icons.spa_outlined, size: 18),
                       label: Text(
                         _isPlanting ? 'Planting...' : 'Add to Garden',
@@ -506,32 +483,38 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
                   ),
                   const SizedBox(width: 8),
                   Expanded(
-                    child: OutlinedButton.icon(
-                      onPressed:
-                          _isPlanting ||
-                              _isAddingToRepeat ||
-                              _learning.isInRepeat(_currentWord.id)
-                          ? null
-                          : _addCurrentWordToRepeat,
-                      icon: Icon(
-                        _learning.isInRepeat(_currentWord.id)
-                            ? Icons.check_circle_outline
-                            : Icons.refresh,
-                        size: 18,
-                      ),
-                      label: Text(
-                        _isAddingToRepeat
-                            ? 'Saving...'
-                            : _learning.isInRepeat(_currentWord.id)
-                            ? 'Added to Repeat'
-                            : 'Add to Repeat',
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          _learning.isInRepeat(_currentWord.id)
+                              ? Icons.check_circle_outline
+                              : Icons.error_outline,
+                          color: _learning.isInRepeat(_currentWord.id)
+                              ? AppColors.sagePrimary
+                              : Colors.red,
+                          size: 18,
+                        ),
+                        const SizedBox(width: 6),
+                        Flexible(
+                          child: Text(
+                            _learning.isInRepeat(_currentWord.id)
+                                ? 'In Repeat'
+                                : 'Repeat save failed',
+                            style: const TextStyle(
+                              color: AppColors.sageSecondary,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
 
-            if (_plantSaveFailed || _repeatSaveFailed)
+            if (_plantSaveFailed)
               const Padding(
                 padding: EdgeInsets.only(top: 8),
                 child: Text(
@@ -582,9 +565,7 @@ class _WordPracticeCardState extends State<WordPracticeCard> {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
-              onPressed: _isPlanting || _isAddingToRepeat
-                  ? null
-                  : _nextQuestion,
+              onPressed: _isPlanting ? null : _nextQuestion,
               icon: const Icon(Icons.arrow_forward),
               label: Text(
                 _questionNumber >= _sessionLimit || !_practice.canPractice
