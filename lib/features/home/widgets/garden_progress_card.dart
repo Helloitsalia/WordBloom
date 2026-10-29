@@ -14,6 +14,8 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
   final LearningProgressController _learning =
       LearningProgressController.instance;
 
+  static const List<int> milestones = [20, 50, 100, 250, 500, 750, 1000];
+
   @override
   void initState() {
     super.initState();
@@ -26,8 +28,6 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
       listenable: _learning,
       builder: (context, child) {
         final learnedWords = _learning.learnedWordsCount;
-
-        const milestones = [20, 50, 100, 250, 500, 750, 1000];
 
         final goalWords = milestones.firstWhere(
           (milestone) => learnedWords < milestone,
@@ -44,37 +44,37 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                   .clamp(0.0, 1.0);
 
         final String rankName;
-        final IconData plantIcon;
+        final String plantAsset;
 
         if (learnedWords >= 1000) {
           rankName = 'WordBloom Master';
-          plantIcon = Icons.workspace_premium;
+          plantAsset = 'stage_08_sunflower.png';
         } else if (learnedWords >= 750) {
           rankName = 'Enchanted Garden';
-          plantIcon = Icons.auto_awesome;
+          plantAsset = 'stage_07_bloom.png';
         } else if (learnedWords >= 500) {
           rankName = 'Botanical Haven';
-          plantIcon = Icons.forest;
+          plantAsset = 'stage_06_flower.png';
         } else if (learnedWords >= 250) {
           rankName = 'Flourishing Garden';
-          plantIcon = Icons.park;
+          plantAsset = 'stage_05_bud.png';
         } else if (learnedWords >= 100) {
           rankName = 'Blooming Garden';
-          plantIcon = Icons.local_florist;
+          plantAsset = 'stage_04_full_leaves.png';
         } else if (learnedWords >= 50) {
           rankName = 'Growing Garden';
-          plantIcon = Icons.yard;
+          plantAsset = 'stage_03_leaves.png';
         } else if (learnedWords >= 20) {
           rankName = 'Seedling';
-          plantIcon = Icons.spa;
+          plantAsset = 'stage_02_seedling.png';
         } else {
           rankName = 'New Gardener';
-          plantIcon = Icons.eco;
+          plantAsset = 'stage_01_soil.png';
         }
 
         return Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             color: AppColors.sageCard,
             borderRadius: BorderRadius.circular(26),
@@ -93,17 +93,15 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                 ),
               ),
 
-              const SizedBox(height: 14),
+              const SizedBox(height: 12),
 
               Row(
                 children: [
-                  SizedBox(
-                    width: 65,
-                    child: Icon(
-                      plantIcon,
-                      size: 48,
-                      color: AppColors.sagePrimary,
-                    ),
+                  Image.asset(
+                    'assets/images/growth/$plantAsset',
+                    width: 94,
+                    height: 94,
+                    fit: BoxFit.contain,
                   ),
 
                   const SizedBox(width: 12),
@@ -113,7 +111,8 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '$learnedWords ${learnedWords == 1 ? 'word' : 'words'} learned!',
+                          '$learnedWords '
+                          '${learnedWords == 1 ? 'word' : 'words'} learned!',
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -121,21 +120,21 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                           ),
                         ),
 
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 5),
 
                         Text(
                           rankName,
                           style: const TextStyle(
-                            fontSize: 13,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600,
                             color: AppColors.sagePrimary,
                           ),
                         ),
 
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 5),
 
                         const Text(
-                          'Every new word is a little victory. 🌻',
+                          'Every word helps your garden grow.',
                           style: TextStyle(
                             fontSize: 12,
                             color: AppColors.sageSecondary,
@@ -147,7 +146,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                 ],
               ),
 
-              const SizedBox(height: 16),
+              const SizedBox(height: 14),
 
               const Divider(color: AppColors.sageBorder, height: 1),
 
@@ -165,6 +164,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                       color: AppColors.sagePrimary,
                     ),
                   ),
+
                   Text(
                     '$learnedWords / $goalWords',
                     style: const TextStyle(
@@ -182,7 +182,7 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
                 borderRadius: BorderRadius.circular(20),
                 child: LinearProgressIndicator(
                   value: progress,
-                  minHeight: 8,
+                  minHeight: 9,
                   backgroundColor: AppColors.sageBorder,
                   color: AppColors.sagePrimary,
                 ),
@@ -193,9 +193,13 @@ class _GardenProgressCardState extends State<GardenProgressCard> {
               Center(
                 child: Text(
                   learnedWords >= 1000
-                      ? 'Your garden has reached its highest rank! 🌻'
+                      ? 'Your garden is in full bloom!'
                       : '${goalWords - learnedWords} more words until your next rank',
                   textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: AppColors.sageSecondary,
+                  ),
                 ),
               ),
             ],

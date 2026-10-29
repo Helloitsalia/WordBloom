@@ -64,9 +64,13 @@ class DailyWordCard extends StatelessWidget {
                     onPressed: () async {
                       await savedController.toggleSaved(word.id);
                     },
-                    icon: Icon(
-                      isSaved ? Icons.bookmark : Icons.bookmark_border,
-                      color: AppColors.sagePrimary,
+                    icon: Image.asset(
+                      isSaved
+                          ? 'assets/images/learning/bookmark_flower.png'
+                          : 'assets/images/learning/bookmark_leaf.png',
+                      width: 30,
+                      height: 34,
+                      fit: BoxFit.contain,
                     ),
                   );
                 },
@@ -77,24 +81,44 @@ class DailyWordCard extends StatelessWidget {
           const SizedBox(height: 12),
 
           // Today's vocabulary word
-          Text(
-            word.word,
-            style: const TextStyle(
-              fontSize: 29,
-              fontWeight: FontWeight.bold,
-              color: AppColors.sageDark,
-            ),
-          ),
-
-          const SizedBox(height: 6),
-
-          // CEFR level and part of speech
-          Text(
-            '${word.cefrLevel} • ${word.partOfSpeech}',
-            style: const TextStyle(
-              color: AppColors.sageSecondary,
-              fontSize: 13,
-            ),
+          // Today's vocabulary word with botanical decoration
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      word.word,
+                      style: const TextStyle(
+                        fontSize: 29,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.sageDark,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      '${word.cefrLevel} • ${word.partOfSpeech}',
+                      style: const TextStyle(
+                        color: AppColors.sageSecondary,
+                        fontSize: 13,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Image.asset(
+                'assets/images/decor/sunflower.png',
+                width: 76,
+                height: 76,
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) {
+                  return const SizedBox.shrink();
+                },
+              ),
+            ],
           ),
 
           const SizedBox(height: 10),

@@ -28,10 +28,13 @@ class _LeafBalanceBadgeState extends State<LeafBalanceBadge> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.eco, size: 25, color: AppColors.sagePrimary),
-
+            Image.asset(
+              'assets/images/decor/leaf_pair.png',
+              width: 30,
+              height: 30,
+              fit: BoxFit.contain,
+            ),
             const SizedBox(width: 6),
-
             Text(
               _controller.isLoaded ? '${_controller.balance}' : '...',
               style: const TextStyle(
