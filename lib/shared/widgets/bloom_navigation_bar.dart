@@ -12,54 +12,83 @@ class BloomNavigationBar extends StatelessWidget {
     required this.onDestinationSelected,
   });
 
-  Widget _navIcon(String assetPath, {bool selected = false}) {
-    return Image.asset(
-      assetPath,
-      width: selected ? 30 : 27,
-      height: selected ? 30 : 27,
-      fit: BoxFit.contain,
-      filterQuality: FilterQuality.high,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return NavigationBar(
-      selectedIndex: selectedIndex,
-      onDestinationSelected: onDestinationSelected,
-      backgroundColor: AppColors.warmCream,
-      indicatorColor: AppColors.blossomPink,
-      elevation: 0,
-      height: 75,
-      labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-      destinations: [
-        NavigationDestination(
-          icon: _navIcon('assets/images/nav/home.png'),
-          selectedIcon: _navIcon('assets/images/nav/home.png', selected: true),
-          label: 'Home',
-        ),
-        NavigationDestination(
-          icon: _navIcon('assets/images/nav/search.png'),
-          selectedIcon: _navIcon(
-            'assets/images/nav/search.png',
-            selected: true,
+    return NavigationBarTheme(
+      data: NavigationBarThemeData(
+        labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>((states) {
+          final selected = states.contains(WidgetState.selected);
+
+          return TextStyle(
+            fontSize: 12,
+            fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+            color: selected ? AppColors.sagePrimary : AppColors.sageSecondary,
+          );
+        }),
+      ),
+      child: NavigationBar(
+        selectedIndex: selectedIndex,
+        onDestinationSelected: onDestinationSelected,
+        backgroundColor: AppColors.warmCream,
+        indicatorColor: Colors.transparent,
+        elevation: 0,
+        height: 72,
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(
+              Icons.home_outlined,
+              size: 27,
+              color: AppColors.sageSecondary,
+            ),
+            selectedIcon: Icon(
+              Icons.home_rounded,
+              size: 27,
+              color: AppColors.sagePrimary,
+            ),
+            label: 'Home',
           ),
-          label: 'Discover',
-        ),
-        NavigationDestination(
-          icon: _navIcon('assets/images/nav/saved.png'),
-          selectedIcon: _navIcon('assets/images/nav/saved.png', selected: true),
-          label: 'Saved',
-        ),
-        NavigationDestination(
-          icon: _navIcon('assets/images/nav/garden.png'),
-          selectedIcon: _navIcon(
-            'assets/images/nav/garden.png',
-            selected: true,
+          NavigationDestination(
+            icon: Icon(
+              Icons.search_rounded,
+              size: 27,
+              color: AppColors.sageSecondary,
+            ),
+            selectedIcon: Icon(
+              Icons.search_rounded,
+              size: 29,
+              color: AppColors.sagePrimary,
+            ),
+            label: 'Discover',
           ),
-          label: 'Garden',
-        ),
-      ],
+          NavigationDestination(
+            icon: Icon(
+              Icons.bookmark_border_rounded,
+              size: 27,
+              color: AppColors.sageSecondary,
+            ),
+            selectedIcon: Icon(
+              Icons.bookmark_rounded,
+              size: 27,
+              color: AppColors.sagePrimary,
+            ),
+            label: 'Saved',
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.local_florist_outlined,
+              size: 27,
+              color: AppColors.sageSecondary,
+            ),
+            selectedIcon: Icon(
+              Icons.local_florist_rounded,
+              size: 27,
+              color: AppColors.sagePrimary,
+            ),
+            label: 'Garden',
+          ),
+        ],
+      ),
     );
   }
 }
