@@ -23,7 +23,16 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
       clipBehavior: Clip.antiAlias,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
+      color: _isExpanded ? const Color(0xFFF3F8F2) : Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(22),
+        side: BorderSide(
+          color: _isExpanded
+              ? const Color(0xFF64836A)
+              : const Color(0xFFC4D9CB),
+          width: _isExpanded ? 2 : 1,
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -40,9 +49,17 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
                   Expanded(
                     child: Text(word.word, style: theme.textTheme.titleLarge),
                   ),
-                  Chip(
-                    label: Text(word.cefrLevel),
-                    visualDensity: VisualDensity.compact,
+                  Image.asset(
+                    'assets/images/cefr/${word.cefrLevel.toLowerCase()}.png',
+                    width: 46,
+                    height: 46,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Chip(
+                        label: Text(word.cefrLevel),
+                        visualDensity: VisualDensity.compact,
+                      );
+                    },
                   ),
                   const SizedBox(width: 8),
                   ListenableBuilder(
@@ -54,11 +71,13 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
 
                       return IconButton(
                         tooltip: isSaved ? 'Remove saved word' : 'Save word',
-                        icon: Icon(
-                          isSaved ? Icons.bookmark : Icons.bookmark_border,
-                          color: isSaved
-                              ? const Color(0xFFA33E73)
-                              : Colors.grey,
+                        icon: Image.asset(
+                          isSaved
+                              ? 'assets/images/learning/bookmark_flower.png'
+                              : 'assets/images/learning/bookmark_leaf.png',
+                          width: 26,
+                          height: 26,
+                          fit: BoxFit.contain,
                         ),
                         onPressed: () {
                           controller.toggleSaved(word.id);
@@ -92,7 +111,7 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
                           width: double.infinity,
                           padding: const EdgeInsets.all(14),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFFFEFF4),
+                            color: const Color(0xFFE4EFE7),
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
@@ -102,7 +121,7 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
                                 'DEFINITION',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFFA33E73),
+                                  color: Color(0xFF416C55),
                                   fontSize: 12,
                                 ),
                               ),
@@ -116,7 +135,7 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
                           width: double.infinity,
                           padding: const EdgeInsets.all(14),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFE9F4E9),
+                            color: const Color(0xFFFAEEE7),
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Column(
@@ -126,7 +145,7 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
                                 'EXAMPLE SENTENCE',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF4B805F),
+                                  color: Color(0xFFA76B56),
                                   fontSize: 12,
                                 ),
                               ),
@@ -146,7 +165,22 @@ class _ExpandableWordCardState extends State<ExpandableWordCard> {
                             spacing: 8,
                             runSpacing: 8,
                             children: word.categories.map((category) {
-                              return Chip(label: Text(category));
+                              return Chip(
+                                label: Text(
+                                  category,
+                                  style: const TextStyle(
+                                    color: Color(0xFFA33E73),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                backgroundColor: const Color(0xFFF9EAF0),
+                                side: BorderSide.none,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                visualDensity: VisualDensity.compact,
+                              );
                             }).toList(),
                           ),
                         ],

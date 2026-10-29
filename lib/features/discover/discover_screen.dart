@@ -4,7 +4,6 @@ import '../../data/models/vocabulary_word.dart';
 import '../../shared/widgets/expandable_word_card.dart';
 import '../../data/services/vocabulary_repository.dart';
 
-
 class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
 
@@ -52,7 +51,41 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Discover 🌷'), centerTitle: true),
+      appBar: AppBar(
+        toolbarHeight: 100,
+        titleSpacing: 20,
+        title: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Discover',
+                    style: Theme.of(context).textTheme.headlineMedium
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Find new words to grow your vocabulary.',
+                    style: Theme.of(context).textTheme.bodySmall,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 12),
+            Image.asset(
+              'assets/images/learning/open_book.png',
+              width: 64,
+              height: 64,
+              fit: BoxFit.contain,
+            ),
+          ],
+        ),
+      ),
       body: FutureBuilder<List<VocabularyWord>>(
         future: _wordsFuture,
         builder: (context, snapshot) {
@@ -81,11 +114,37 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Search words...',
-                    prefixIcon: const Icon(Icons.search),
+                    hintStyle: const TextStyle(color: Color(0xFF898E83)),
+                    prefixIcon: const Icon(
+                      Icons.search,
+                      color: Color(0xFFA2AA9C),
+                    ),
                     filled: true,
+                    fillColor: const Color(0xFFFFF5E6),
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 18,
+                      horizontal: 20,
+                    ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18),
-                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Color(0xFFD8CEB9),
+                        width: 1.2,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Color(0xFFD8CEB9),
+                        width: 1.2,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Color(0xFF416C55),
+                        width: 1.6,
+                      ),
                     ),
                   ),
                   onChanged: (value) {
@@ -104,9 +163,56 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                   itemBuilder: (context, index) {
                     final level = _levels[index];
 
+                    final selectedColors = <String, Color>{
+                      'All': const Color(0xFFD3EBDD),
+                      'A1': const Color(0xFFB8CCB2),
+                      'A2': const Color(0xFFE0E6BA),
+                      'B1': const Color(0xFFF6E8D3),
+                      'B2': const Color(0xFFF7BEC9),
+                      'C1': const Color(0xFFF69EAF),
+                      'C2': const Color(0xFFB7CCAF),
+                    };
+
+                    final borderColors = <String, Color>{
+                      'All': const Color(0xFF416C55),
+                      'A1': const Color(0xFF64836A),
+                      'A2': const Color(0xFF838E4D),
+                      'B1': const Color(0xFFAA865D),
+                      'B2': const Color(0xFFB9657D),
+                      'C1': const Color(0xFFAE4E69),
+                      'C2': const Color(0xFF5E8062),
+                    };
+
+                    final unselectedColors = <String, Color>{
+                      'All': const Color(0xFFF7F9F5),
+                      'A1': const Color(0xFFE3EBDF),
+                      'A2': const Color(0xFFF0F2DC),
+                      'B1': const Color(0xFFFFF3E3),
+                      'B2': const Color(0xFFFCE4E9),
+                      'C1': const Color(0xFFFFD6DF),
+                      'C2': const Color(0xFFDFEBDD),
+                    };
+
+                    final isSelected = _selectedLevel == level;
+
                     return ChoiceChip(
                       label: Text(level),
-                      selected: _selectedLevel == level,
+                      selected: isSelected,
+                      selectedColor: selectedColors[level],
+                      backgroundColor: unselectedColors[level],
+                      side: BorderSide(
+                        color: isSelected
+                            ? borderColors[level]!
+                            : const Color(0xFFCCD7CE),
+                        width: isSelected ? 1.8 : 1,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      labelStyle: const TextStyle(
+                        color: Color(0xFF30483D),
+                        fontWeight: FontWeight.w500,
+                      ),
                       onSelected: (_) {
                         setState(() => _selectedLevel = level);
                       },
@@ -119,9 +225,20 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 padding: const EdgeInsets.all(20),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    '${words.length} words found',
-                    style: Theme.of(context).textTheme.bodyMedium,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '${words.length} words found',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      Image.asset(
+                        'assets/images/decor/sprout.png',
+                        width: 38,
+                        height: 38,
+                        fit: BoxFit.contain,
+                      ),
+                    ],
                   ),
                 ),
               ),
