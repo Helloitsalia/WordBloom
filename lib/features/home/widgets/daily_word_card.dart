@@ -20,40 +20,34 @@ class DailyWordCard extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: AppColors.sageCard,
-        borderRadius: BorderRadius.circular(26),
-        border: Border.all(color: AppColors.sageBorder, width: 1),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: AppColors.sageBorder),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Row(
-                children: [
-                  Icon(
-                    Icons.spa_outlined,
-                    color: AppColors.sagePrimary,
-                    size: 18,
-                  ),
-                  SizedBox(width: 6),
-                  Text(
-                    "TODAY'S WORD",
-                    style: TextStyle(
-                      color: AppColors.sagePrimary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
-                      letterSpacing: 1.2,
-                    ),
-                  ),
-                ],
+              const Icon(
+                Icons.spa_outlined,
+                color: AppColors.sagePrimary,
+                size: 17,
               ),
-
-              // Bookmark button
+              const SizedBox(width: 6),
+              const Expanded(
+                child: Text(
+                  "TODAY'S WORD",
+                  style: TextStyle(
+                    color: AppColors.sagePrimary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 11,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ),
               ListenableBuilder(
                 listenable: savedController,
                 builder: (context, child) {
@@ -68,8 +62,8 @@ class DailyWordCard extends StatelessWidget {
                       isSaved
                           ? 'assets/images/learning/bookmark_flower.png'
                           : 'assets/images/learning/bookmark_leaf.png',
-                      width: 30,
-                      height: 34,
+                      width: 26,
+                      height: 30,
                       fit: BoxFit.contain,
                     ),
                   );
@@ -78,12 +72,9 @@ class DailyWordCard extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 4),
 
-          // Today's vocabulary word
-          // Today's vocabulary word with botanical decoration
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Column(
@@ -92,17 +83,17 @@ class DailyWordCard extends StatelessWidget {
                     Text(
                       word.word,
                       style: const TextStyle(
-                        fontSize: 29,
+                        fontSize: 27,
                         fontWeight: FontWeight.bold,
                         color: AppColors.sageDark,
                       ),
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: 3),
                     Text(
                       '${word.cefrLevel} • ${word.partOfSpeech}',
                       style: const TextStyle(
                         color: AppColors.sageSecondary,
-                        fontSize: 13,
+                        fontSize: 12,
                       ),
                     ),
                   ],
@@ -111,57 +102,52 @@ class DailyWordCard extends StatelessWidget {
               const SizedBox(width: 8),
               Image.asset(
                 'assets/images/decor/sunflower.png',
-                width: 76,
-                height: 76,
+                width: 62,
+                height: 62,
                 fit: BoxFit.contain,
-                errorBuilder: (context, error, stackTrace) {
-                  return const SizedBox.shrink();
-                },
               ),
             ],
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
 
-          // Definition
           Text(
             word.definition,
-            style: const TextStyle(color: AppColors.sageDark, fontSize: 15),
+            style: const TextStyle(color: AppColors.sageDark, fontSize: 14),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
 
-          // Example sentence
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.all(14),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               word.example,
               style: const TextStyle(
-                fontSize: 14,
+                fontSize: 13,
                 fontStyle: FontStyle.italic,
                 color: AppColors.sageSecondary,
               ),
             ),
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 10),
 
-          // Learning button
           SizedBox(
             width: double.infinity,
+            height: 44,
             child: ElevatedButton(
               onPressed: onLearnPressed,
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.sagePrimary,
                 foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 11),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(13),
                 ),
               ),
               child: const Text('Practice vocabulary →'),

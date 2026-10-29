@@ -12,6 +12,16 @@ class BloomNavigationBar extends StatelessWidget {
     required this.onDestinationSelected,
   });
 
+  Widget _navIcon(String assetPath, {bool selected = false}) {
+    return Image.asset(
+      assetPath,
+      width: selected ? 30 : 27,
+      height: selected ? 30 : 27,
+      fit: BoxFit.contain,
+      filterQuality: FilterQuality.high,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
@@ -22,25 +32,31 @@ class BloomNavigationBar extends StatelessWidget {
       elevation: 0,
       height: 75,
       labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-      destinations: const [
+      destinations: [
         NavigationDestination(
-          icon: Icon(Icons.home_outlined),
-          selectedIcon: Icon(Icons.home_rounded),
+          icon: _navIcon('assets/images/nav/home.png'),
+          selectedIcon: _navIcon('assets/images/nav/home.png', selected: true),
           label: 'Home',
         ),
         NavigationDestination(
-          icon: Icon(Icons.menu_book_outlined),
-          selectedIcon: Icon(Icons.menu_book_rounded),
+          icon: _navIcon('assets/images/nav/search.png'),
+          selectedIcon: _navIcon(
+            'assets/images/nav/search.png',
+            selected: true,
+          ),
           label: 'Discover',
         ),
         NavigationDestination(
-          icon: Icon(Icons.bookmark_border_rounded),
-          selectedIcon: Icon(Icons.bookmark_rounded),
+          icon: _navIcon('assets/images/nav/saved.png'),
+          selectedIcon: _navIcon('assets/images/nav/saved.png', selected: true),
           label: 'Saved',
         ),
         NavigationDestination(
-          icon: Icon(Icons.local_florist_outlined),
-          selectedIcon: Icon(Icons.local_florist_rounded),
+          icon: _navIcon('assets/images/nav/garden.png'),
+          selectedIcon: _navIcon(
+            'assets/images/nav/garden.png',
+            selected: true,
+          ),
           label: 'Garden',
         ),
       ],
