@@ -6,6 +6,7 @@ class VocabularyWord {
   final String definition;
   final String example;
   final List<String> categories;
+  final List<String> collections;
   final String reviewStatus;
 
   const VocabularyWord({
@@ -16,6 +17,7 @@ class VocabularyWord {
     required this.definition,
     required this.example,
     required this.categories,
+    this.collections = const [],
     required this.reviewStatus,
   });
 
@@ -28,6 +30,7 @@ class VocabularyWord {
       definition: json['definition'] as String,
       example: json['example'] as String,
       categories: List<String>.from(json['categories'] ?? []),
+      collections: List<String>.from(json['collections'] ?? []),
       reviewStatus: json['reviewStatus'] as String? ?? 'needs_review',
     );
   }
