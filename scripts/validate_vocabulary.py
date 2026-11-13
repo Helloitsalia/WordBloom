@@ -104,6 +104,12 @@ def validate_vocabulary():
                     f"Row {row_number}: Invalid review status: {review_status}"
                 )
 
+            if not row["collections"].strip():
+                errors.append(
+                     f"Row {row_number}: Missing collection."
+           )
+
+
             collections = [
                 value.strip()
                 for value in row["collections"].split(",")
